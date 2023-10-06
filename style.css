@@ -1,0 +1,167 @@
+/* Resets */
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  color: hsl(237, 12%, 33%);
+}
+
+/* Main container */
+.list-container {
+  background-color: white;
+  border-radius: 25px;
+  padding: 135px 30px 50px 30px;
+  margin: 30px;
+  margin-top: 125px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  box-shadow: 0 20px 20px 0 black;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* Images */
+.image-container {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-img {
+  width: 200px;
+  display: block;
+}
+
+.shadow-img {
+  width: 200px;
+  position: absolute;
+  top: -20px;
+}
+
+/* List items*/
+.main-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+}
+
+.main-list li {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.small-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.question {
+  width: fit-content;
+  font-size: 12px;
+}
+
+li:focus .question {
+  font-weight: 700;
+}
+
+.hidden-text {
+  display: none;
+  max-width: fit-content;
+  font-size: 12px;
+}
+
+li:focus .hidden-text {
+  display: inline;
+  width: fit-content;
+}
+
+/* .main-list li img {
+  height: 7px;
+  width: 10px;
+} */
+
+li:focus .flip-arrow {
+  transform: rotate(180deg);
+}
+
+.floating-box {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .list-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 90vw;
+    gap: 0px;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: -100px -100px;
+    z-index: 1;
+  }
+
+  .image-container {
+    position: relative;
+    transform: none;
+    width: 50%;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .main-img {
+    display: none;
+  }
+  .shadow-img {
+    width: 400px;
+  }
+
+  .faq-section {
+    width: 50%;
+  }
+
+  .floating-box {
+    display: block;
+    position: absolute;
+    left: -63px;
+    top: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .main-list {
+    width: 100%;
+  }
+}
